@@ -8,22 +8,37 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Ajouter un étudiant</h2>
-        <form method="post" action="controller.php?action=add">
-            <div class="form-group">
-                <label for="nom">Nom :</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Ajouter un étudiant</h2>
             </div>
-            <div class="form-group">
-                <label for="prenom">Prénom :</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" required>
+            <div class="card-body">
+                <form method="post" action="controller.php?action=add">
+
+                    <!-- Nom -->
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input type="text" class="form-control" id="nom" name="nom" required>
+                    </div>
+
+                    <!-- Prénom -->
+                    <div class="form-group">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" required>
+                    </div>
+
+                    <!-- Âge -->
+                    <div class="form-group">
+                        <label for="age">Âge :</label>
+                        <input type="number" class="form-control" id="age" name="age" required>
+                    </div>
+
+                    <!-- Bouton Ajouter -->
+                    <button type="submit" class="btn btn-primary">Ajouter</button>
+
+                </form>
             </div>
-            <div class="form-group">
-                <label for="age">Âge :</label>
-                <input type="number" class="form-control" id="age" name="age" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
-        </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

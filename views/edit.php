@@ -8,23 +8,40 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Modifier un étudiant</h2>
-        <form method="post" action="controller.php?action=edit">
-            <input type="hidden" name="id" value="<?= $etudiant['id']; ?>">
-            <div class="form-group">
-                <label for="nom">Nom :</label>
-                <input type="text" class="form-control" id="nom" name="nom" value="<?= $etudiant['nom']; ?>" required>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Modifier un étudiant</h2>
             </div>
-            <div class="form-group">
-                <label for="prenom">Prénom :</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" value="<?= $etudiant['prenom']; ?>" required>
+            <div class="card-body">
+                <form method="post" action="controller.php?action=edit">
+
+                    <!-- Champ ID caché -->
+                    <input type="hidden" name="id" value="<?= $etudiant['id']; ?>">
+
+                    <!-- Champ Nom -->
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input type="text" class="form-control" id="nom" name="nom" value="<?= $etudiant['nom']; ?>" required>
+                    </div>
+
+                    <!-- Champ Prénom -->
+                    <div class="form-group">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" value="<?= $etudiant['prenom']; ?>" required>
+                    </div>
+
+                    <!-- Champ Âge -->
+                    <div class="form-group">
+                        <label for="age">Âge :</label>
+                        <input type="number" class="form-control" id="age" name="age" value="<?= $etudiant['age']; ?>" required>
+                    </div>
+
+                    <!-- Bouton Modifier -->
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+
+                </form>
             </div>
-            <div class="form-group">
-                <label for="age">Âge :</label>
-                <input type="number" class="form-control" id="age" name="age" value="<?= $etudiant['age']; ?>" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Modifier</button>
-        </form>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

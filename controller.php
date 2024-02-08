@@ -4,7 +4,11 @@ include 'model.php';
 
 $etudiantModel = new EtudiantModel($conn);
 
-$action = isset($_GET['action']) ? $_GET['action'] : 'list';
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+} else {
+    $action = 'list';
+}
 
 switch ($action) {
     case 'list':

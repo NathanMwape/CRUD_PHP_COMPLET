@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD </title>
+    <title>CRUD Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,18 +22,18 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($etudiants as $etudiant) : ?>
+                <?php while ($row = $stmt->fetch()) : ?>
                     <tr>
-                        <th scope="row"><?= $etudiant['id']; ?></th>
-                        <td><?= $etudiant['nom']; ?></td>
-                        <td><?= $etudiant['prenom']; ?></td>
-                        <td><?= $etudiant['age']; ?></td>
+                        <th scope="row"><?= $row['id']; ?></th>
+                        <td><?= $row['nom']; ?></td>
+                        <td><?= $row['prenom']; ?></td>
+                        <td><?= $row['age']; ?></td>
                         <td>
-                            <a href="controller.php?action=edit&id=<?= $etudiant['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>
-                            <a href="controller.php?action=delete&id=<?= $etudiant['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?')">Supprimer</a>
+                            <a href="controller.php?action=edit&id=<?= $row['id']; ?>" class="btn btn-warning btn-sm">Modifier</a>
+                            <a href="controller.php?action=delete&id=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?')">Supprimer</a>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>
